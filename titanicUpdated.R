@@ -10,7 +10,6 @@ EmbarkedN<-ifelse(titanicUpdated$Embarked=="Southampton",1,
                   ifelse(titanicUpdated$Embarked=="Cherbourg",2,0))
 titanicUpdated<-data.frame(titanicUpdated,EmbarkedN)
 
-
 write.csv(titanicUpdated,"titanicUpdated.csv")
 
 titanic.scaled<-scale(data.frame(titanic$Age,titanic$Parch,
