@@ -1,8 +1,11 @@
+#Read new data
+
 titanicNew<-read.csv("titanicNew.csv")
 titanicUpdated<-titanicNew
 SurvivedNum<-ifelse(titanicUpdated$Survived=="Not Survived",0,1)
 titanicUpdated<-data.frame(titanicUpdated,SurvivedNum)
 
+#Update the dataframe
 SexN<-ifelse(titanicUpdated$Sex=="male",1,0)
 titanicUpdated<-data.frame(titanicUpdated,SexN)
 
@@ -33,4 +36,3 @@ plot(btwss,xlab="Number of Cluster",type="b",
 install.packages("Rserve")
 library(Rserve)
 Rserve()
-
